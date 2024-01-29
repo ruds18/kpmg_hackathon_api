@@ -6,4 +6,4 @@ CORS(app)
 
 @app.route('/api/ml')
 def predict():
-    return 0
+    return {"output":1}
