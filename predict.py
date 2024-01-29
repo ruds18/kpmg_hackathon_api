@@ -56,11 +56,6 @@ def get_base():
 
 def run_bot(user_prompt):
         user_question = user_prompt
-        # if user_question.lower() == "quit":
-          
-
-        # if not user_question:
-        #     print("Please enter a question or type 'quit' to exit.")
             
 
         docs = knowledge_base.similarity_search(user_question)
