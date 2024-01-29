@@ -54,8 +54,8 @@ def get_base():
     return knowledge_base
 
 
-def run_bot(knowledge_base):
-        user_question = "What is the par value per share of Convertible preferred stock?"
+def run_bot(user_prompt):
+        user_question = user_prompt
         # if user_question.lower() == "quit":
           
 
@@ -70,11 +70,12 @@ def run_bot(knowledge_base):
         response = chain.run(input_documents=docs, question=user_question)
         return response
 
+knowledge_base = get_base()
 
-if __name__ == '__main__':
-    run_bot(get_base())
+
 
 @app.route('/api/ml')
 def predict():
-     output =  run_bot(get_base())
+     user_prompt = "What is the par value per share of Convertible preferred stock?"
+     output =  run_bot(user_prompt)
      return {"output":output}
